@@ -1,33 +1,18 @@
-import './App.css';
+import './styles/App.css';
 import React from 'react';
-import { useState } from 'react';
+import Counter from './Components/Counter';
+import ClassCounter from './Components/ClassCounter';
+import Post from './Components/Post';
+
 function App() {
 
-  const [likes, setLikes] = useState(0);
-  const [value, setValue] = useState('Your comment');
-
-  function inc(){
-    setLikes(likes+1);
-    console.log(likes);
-  }
-
-  function dec(){
-    setLikes(likes-1);
-    console.log(likes);
-  }
   return (
     <div className="App">
-      <h1>{likes}</h1>
-      <h2>{value}</h2>
-      <button onClick={inc}>Инкремент</button>
-      <button onClick={dec}>Декремент</button>
-      <input 
-      type = "text" 
-      name = "comment" 
-      value = {value} 
-      onChange = { (e) => setValue(e.target.value)}
-      onFocus = { (e) => e.target.value = null}
-      />
+      <Counter />
+      <ClassCounter />
+      <Post post = {{id:1, title: "Javascript", body: 'Жуэс'}}/>
+      <Post post = {{id:2, title: "Python", body: 'Ну не на питоне же'}}/>
+      <Post post = {{id:3, title: "Assembly", body: 'О боги'}}/>
     </div>
   );
 }
