@@ -27,7 +27,7 @@ function App() {
       const posts = await PostService.getAll()
       setPosts(posts)
       setIsPostsLoading(false)
-    }, 4000)
+    }, 10000)
 
   }
 

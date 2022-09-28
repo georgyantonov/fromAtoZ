@@ -2,14 +2,64 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 1px dashed teal;
-    animation: rotate 1s infinite linear;
+    border: 3px dashed teal;
+    -webkit-animation: rotate 1.5s infinite linear ;;
+    -moz-animation: rotate 1.5s infinite linear ;;
+    animation: rotate 1.5s infinite linear ;
+    
+}
+.wrap {
+    width: 100px;
+    height: 100px;
+    animation: scaling 3s infinite linear;
+    -moz-animation: scaling 3s infinite linear;
+    -webkit-animation: scaling 3s infinite linear;
 }
 @keyframes rotate {
     from{
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) ;
     }
     to{
-        transform: rotate(360deg) scale(1.5);
+        transform: rotate(360deg) ;
+    }
+}
+@keyframes scaling {
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 1.5;
+    }
+}
+@-moz-keyframes rotate {
+    from{
+        transform: rotate(0deg) ;
+    }
+    to{
+        transform: rotate(360deg) ;
+    }
+}
+@-moz-keyframes scaling {
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 1.5;
+    }
+}
+@-webkit-keyframes rotate {
+    from{
+        transform: rotate(0deg) ;
+    }
+    to{
+        transform: rotate(360deg) ;
+    }
+}
+@-webkit-keyframes scaling {
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 1.5;
     }
 }
