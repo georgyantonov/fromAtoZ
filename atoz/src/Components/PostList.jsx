@@ -1,8 +1,9 @@
 import React from 'react'
 import Post from './Post'
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import { memo } from 'react';
 
-export default function PostList({posts, title, remove}) {
+function PostList({posts, title, remove}) {
   if(!posts.length){
     return(
       <h1 style={{textAlign:'center'}}>Посты не найдены</h1>
@@ -26,3 +27,15 @@ export default function PostList({posts, title, remove}) {
     </div>
   )}
 }
+
+function isEqual(prevProps, nextProps){
+  const { posts : prevPost } = prevProps;
+  const { posts : nextPost } = nextProps
+  console.log(prevPost);
+  console.log(nextPost);
+  if ( prevPost.length !== nextPost.length  ){
+    return false;
+  }
+  return true;
+}
+export default memo(PostList, isEqual)

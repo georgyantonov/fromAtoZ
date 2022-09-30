@@ -9,6 +9,7 @@ import MyButton from './Components/UI/button/MyButton';
 import { usePosts } from './hooks/usePosts';
 import PostService from './API/PostService';
 import { Loader } from './Components/UI/loader/Loader';
+import Memoised from './Components/Memoised';
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -42,15 +43,10 @@ function App() {
 
   return (
     <div className="App">
-      <MyButton
-      onClick={fetchPosts}
-      >Получить посты</MyButton>
-      <MyButton
-        style={{marginTop: 30}}
-        onClick={() => setModal(true)}
-      >
-        Создать пост
-      </MyButton>
+      <Memoised 
+        fetchPosts={fetchPosts}
+        setModal={setModal}
+      />
       <MyModal
         visible={modal}
         setVisible={setModal}

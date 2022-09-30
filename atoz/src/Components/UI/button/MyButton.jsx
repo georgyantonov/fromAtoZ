@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from './MyButton.module.css'
 
-export default function MyButton({children,...props}) {
+function MyButton({children,...props}) {
   return (
 
     <button {...props} className={classes.myBtn}>
@@ -9,3 +9,4 @@ export default function MyButton({children,...props}) {
     </button>
   )
 }
+export default memo(MyButton);
