@@ -1,25 +1,36 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom'
 import { Navbar } from './UI/navbar/Navbar';
-import About from './../pages/About';
-import Posts from './../pages/Posts';
-import { NotFound } from './../pages/NotFound';
-import { PostIdPage } from './../pages/PostIdPage';
-import { routes } from './../router/Routes';
+import { publicRoutes, privateRoutes } from './../router/Routes';
+import Posts from '../pages/Posts';
+
 
 
 export const AppRouter = () => {
+  const isAuth = true;
+
   return (
     <BrowserRouter>
         <Navbar />
-        <Routes>
-            {routes.map(route => 
+        {isAuth 
+          ? <Routes>
+              {privateRoutes.map(route => 
                 <Route
-                    element={<route.element/>}
-                    path={route.path}
-                />
+                  element={<route.element/>}
+                  path={route.path}
+              />
+          )}
+            </Routes>
+          :
+          <Routes>
+            {publicRoutes.map(route => 
+              <Route
+                  element={<route.element/>}
+                  path={route.path}
+              />
             )}
-        </Routes>
+          </Routes>
+          }
     </BrowserRouter>
   )
 }
