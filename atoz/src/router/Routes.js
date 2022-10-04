@@ -10,13 +10,9 @@ export const privateRoutes = [
     {path: '/posts/:id', element: PostIdPage},
     {path: '*', element: NotFound},
     {path: '/', element: Posts},
-    {path:'/login', element: Posts},
-    {path:'/sign-in', element: Posts}
 ]
 
 export const publicRoutes = [
     {path:'/login', element: Login},
-    {path:'/posts', element: Login},
-    {path:'/about', element: Login},
-    {path:'/posts/:id', element: Login}
+
 ]
