@@ -4,9 +4,14 @@ import { Navbar } from './UI/navbar/Navbar';
 import { publicRoutes, privateRoutes } from './../router/Routes';
 import { useContext } from 'react';
 import { AuthContext } from '../context';
+import { Loader } from './UI/loader/Loader';
 
 export const AppRouter = (props) => {
-  const {isAuth} = useContext(AuthContext)
+  const {isAuth, isLoading} = useContext(AuthContext)
+
+  if( isLoading ){
+    return <Loader/>
+  }
   return (
     <BrowserRouter>
         <Navbar />
