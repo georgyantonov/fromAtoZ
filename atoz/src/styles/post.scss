@@ -1,0 +1,30 @@
+.posts {
+    // .posts__post
+    &__post{
+        display: flex;
+        border: 2px solid gray;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        &_promo{
+            height: 100px;
+            background-color: yellow;
+        }
+    }
+}
+.post{
+    /* .post__content */
+    &__content {
+        padding: 15px;
+    }
+
+    /* .post__btns */
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 15px;
+    }
+
+
+}
